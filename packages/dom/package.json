@@ -70,7 +70,8 @@
     "build:sortable": "tsup --entry.sortable src/sortable/index.ts",
     "build:utilities": "tsup --entry.utilities src/utilities/index.ts",
     "dev": "bun build:utilities --watch & bun build:core --watch & bun build:sortable --watch & bun build:modifiers --watch & bun build:plugins --watch",
-    "test": "bun test",
+    "test": "bun test && bun run test:types",
+    "test:types": "tsc --project tests/types/tsconfig.json",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
